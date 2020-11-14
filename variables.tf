@@ -8,12 +8,12 @@ variable resource_group_name {
 }
 variable location {
   type        = string
-  description = "The location/region where the virtual network is created. "
+  description = "The location/region where the network security group is created. "
 }
 variable inbound_rules {
   type        = list(map(string))
   default     = []
-  description = "List of objects representing inbound rules."
+  description = "List of objects that represent the configuration of each inbound rule."
   # inbound_rules = [
   #   {
   #     name                       = ""
@@ -31,7 +31,7 @@ variable inbound_rules {
 variable outbound_rules {
   type        = list(map(string))
   default     = []
-  description = "List of objects representing outbound rules."
+  description = "List of objects that represent the configuration of each outbound rule."
   # outbound_rules = [
   #   {
   #     name                       = ""

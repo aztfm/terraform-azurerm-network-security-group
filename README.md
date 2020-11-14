@@ -13,14 +13,14 @@
 
 The following parameters are supported:
 
-| Name                  | Description                                                            |        Type         | Default | Required |
-| --------------------- | ---------------------------------------------------------------------- | :-----------------: | :-----: | :------: |
-| name                  | The name of the network security group.                                |      `string`       |   n/a   |   yes    |
-| resource\_group\_name | The name of the resource group in which to create the virtual network. |      `string`       |   n/a   |   yes    |
-| location              | The location/region where the virtual network is created.              |      `string`       |   n/a   |   yes    |
-| inbound\_rules        | List of objects representing inbound rules.                            | `list(map(string))` |  `[]`   |    no    |
-| outbound\_rules       | List of objects representing outbound rules.                           | `list(map(string))` |  `[]`   |    no    |
-| tags                  | A mapping of tags to assign to the resource.                           |    `map(string)`    |  `{}`   |    no    |
+| Name                  | Description                                                             |        Type         | Default | Required |
+| --------------------- | ----------------------------------------------------------------------- | :-----------------: | :-----: | :------: |
+| name                  | The name of the network security group.                                 |      `string`       |   n/a   |   yes    |
+| resource\_group\_name | The name of the resource group in which to create the virtual network.  |      `string`       |   n/a   |   yes    |
+| location              | The location/region where the virtual network is created.               |      `string`       |   n/a   |   yes    |
+| inbound\_rules        | List of objects that represent the configuration of each inbound rule.  | `list(map(string))` |  `[]`   |    no    |
+| outbound\_rules       | List of objects that represent the configuration of each outbound rule. | `list(map(string))` |  `[]`   |    no    |
+| tags                  | A mapping of tags to assign to the resource.                            |    `map(string)`    |  `{}`   |    no    |
 
 ##
 The `inbound_rules` and `outbound_rules` supports the following:
