@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 module "network_security_group" {
-  source              = "./terraform-azurerm-network-security-group"
+  source              = "./module"
   name                = azurerm_resource_group.rg.name
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
