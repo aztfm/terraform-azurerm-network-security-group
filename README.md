@@ -1,7 +1,8 @@
 # Azure Network Security Group - Terraform Module
-![Testing module](https://github.com/aztfm/terraform-azurerm-network-security-group/workflows/Testing%20module/badge.svg?branch=main)
-[![TF Registry](https://img.shields.io/badge/terraform-registry-blueviolet.svg)](https://registry.terraform.io/modules/aztfm/network-security-group/azurerm/)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/aztfm/terraform-azurerm-network-security-group)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aztfm/terraform-azurerm-network-security-group/Release?label=Testing&logo=GitHub)
+[![Terraform Registry](https://img.shields.io/badge/Terraform-registry-blueviolet.svg?logo=terraform)](https://registry.terraform.io/modules/aztfm/network-security-group/azurerm/)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aztfm/terraform-azurerm-network-security-group?label=Release)
+
 
 ## Version compatibility
 
@@ -22,7 +23,6 @@ The following parameters are supported:
 | outbound\_rules       | List of objects that represent the configuration of each outbound rule. | `list(map(string))` |  `[]`   |    no    |
 | tags                  | A mapping of tags to assign to the resource.                            |    `map(string)`    |  `{}`   |    no    |
 
-##
 The `inbound_rules` and `outbound_rules` supports the following:
 
 | Name                         | Description                                                                                                 |   Type   | Default | Required |
