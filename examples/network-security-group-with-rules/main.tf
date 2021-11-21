@@ -1,17 +1,14 @@
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "TFAZNSG" {
-  name     = "terraform-azurerm-network-security-group"
+resource "azurerm_resource_group" "rg" {
+  name     = "resource-group"
   location = "West Europe"
 }
 
-module "TFAZNSG-nsg" {
-  source              = "./terraform-azurerm-network-security-group"
-  name                = "TFAZNSG-nsg"
-  resource_group_name = azurerm_resource_group.TFAZNSG.name
-  location            = azurerm_resource_group.TFAZNSG.location
+module "network_security_group" {
+  source              = "aztfm/network-security-group/azurerm"
+  version             = ">=1.0.0"
+  name                = "network-security-group"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   inbound_rules = [
     {
       name                       = "inbound_rule_1"
