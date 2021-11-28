@@ -1,3 +1,9 @@
+## 1.0.1 (November 28, 2021)
+
+ENHANCEMENTS:
+
+* Internal changes that do not modify the operation of the module.
+
 ## 1.0.0 (November 12, 2020)
 
 FEATURES:
