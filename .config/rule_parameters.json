@@ -35,40 +35,40 @@
         "Name": "source_address_prefix",
         "Description": "CIDR or source IP range or * to match any IP.",
         "Type": "string",
-        "Default": "n/a",
-        "Required": "yes",
+        "Default": "*",
+        "Required": "no",
         "Support": []
     },
     {
         "Name": "source_port_range",
         "Description": "Source Port or Range. Integer or range between `0` and `65535` or `*` to match any.",
-        "Type": "number",
-        "Default": "n/a",
-        "Required": "yes",
+        "Type": "string",
+        "Default": "*",
+        "Required": "no",
         "Support": []
     },
     {
         "Name": "destination_address_prefix",
         "Description": "CIDR or destination IP range or * to match any IP.",
         "Type": "string",
-        "Default": "n/a",
-        "Required": "yes",
+        "Default": "*",
+        "Required": "no",
         "Support": []
     },
     {
         "Name": "destination_port_range",
         "Description": "Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any.",
-        "Type": "number",
-        "Default": "n/a",
-        "Required": "yes",
+        "Type": "string",
+        "Default": "*",
+        "Required": "no",
         "Support": []
     },
     {
         "Name": "description",
         "Description": "A description for this rule. Restricted to 140 characters.",
         "Type": "string",
-        "Default": "n/a",
-        "Required": "yes",
+        "Default": "null",
+        "Required": "no",
         "Support": []
     }
 ]

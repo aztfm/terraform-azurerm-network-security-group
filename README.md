@@ -23,9 +23,9 @@ The following parameters are supported:
 |name|The name of the network security group.|`string`|n/a|yes|
 |resource\_group\_name|The name of the resource group in which to create the network security group.|`string`|n/a|yes|
 |location|The location/region where the network security group is created.|`string`|n/a|yes|
-|inbound\_rules|List of objects that represent the configuration of each inbound rule.|`list(map(string))`|`[]`|no|
-|outbound\_rules|List of objects that represent the configuration of each outbound rule.|`list(map(string))`|`[]`|no|
 |tags|A mapping of tags to assign to the resource.|`map(string)`|`{}`|no|
+|inbound\_rules|List of objects that represent the configuration of each inbound rule.|`list(object({}))`|`[]`|no|
+|outbound\_rules|List of objects that represent the configuration of each outbound rule.|`list(object({}))`|`[]`|no|
 
 The `inbound_rules` and `outbound_rules` supports the following:
 
@@ -35,11 +35,11 @@ The `inbound_rules` and `outbound_rules` supports the following:
 |priority|The value can be between `100` and `65500`. The priority number must be unique for each rule in the collection.|`number`|n/a|yes|
 |access|Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.|`string`|n/a|yes|
 |protocol|Network protocol this rule applies to. Possible values include `Tcp`, `Udp`, `Icmp`, or `*` (which matches all).|`string`|n/a|yes|
-|source\_address\_prefix|CIDR or source IP range or * to match any IP.|`string`|n/a|yes|
-|source\_port\_range|Source Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`number`|n/a|yes|
-|destination\_address\_prefix|CIDR or destination IP range or * to match any IP.|`string`|n/a|yes|
-|destination\_port\_range|Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`number`|n/a|yes|
-|description|A description for this rule. Restricted to 140 characters.|`string`|n/a|yes|
+|source\_address\_prefix|CIDR or source IP range or * to match any IP.|`string`|`*`|no|
+|source\_port\_range|Source Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`string`|`*`|no|
+|destination\_address\_prefix|CIDR or destination IP range or * to match any IP.|`string`|`*`|no|
+|destination\_port\_range|Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`string`|`*`|no|
+|description|A description for this rule. Restricted to 140 characters.|`string`|`null`|no|
 
 ## Outputs
 
