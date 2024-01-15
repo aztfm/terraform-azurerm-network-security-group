@@ -1,0 +1,122 @@
+[
+    {
+        "Name": "name",
+        "Description": "The name of the network security rule.",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "priority",
+        "Description": "The value can be between `100` and `65500`. The priority number must be unique for each rule in the collection.",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "access",
+        "Description": "Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "protocol",
+        "Description": "Network protocol this rule applies to. Possible values include `Tcp`, `Udp`, `Icmp`, or `*` (which matches all).",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "source_address_prefix",
+        "Description": "CIDR or source IP range or `*` to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. This is required if `source_address_prefixes` is not specified.",
+        "Type": "string",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "source_address_prefixes",
+        "Description": "List of source address prefixes. Tags may not be used. This is required if `source_address_prefix` is not specified.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "source_application_security_group_ids",
+        "Description": "A List of source Application Security Group IDs.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "source_port_range",
+        "Description": "Source Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `source_port_ranges` is not specified.",
+        "Type": "string",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "source_port_ranges",
+        "Description": "List of source ports or port ranges. This is required if `source_port_range` is not specified.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "destination_address_prefix",
+        "Description": "CIDR or destination IP range or `*` to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. This is required if `destination_address_prefixes` is not specified.",
+        "Type": "string",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "destination_address_prefixes",
+        "Description": "List of destination address prefixes. Tags may not be used. This is required if `destination_address_prefix` is not specified.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "destination_application_security_group_ids",
+        "Description": "A List of destination Application Security Group IDs.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "destination_port_range",
+        "Description": "Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `destination_port_ranges` is not specified.",
+        "Type": "string",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "destination_port_ranges",
+        "Description": "List of destination ports or port ranges. This is required if `destination_port_range` is not specified.",
+        "Type": "list(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "description",
+        "Description": "A description for this rule. Restricted to 140 characters.",
+        "Type": "string",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    }
+]
