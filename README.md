@@ -11,6 +11,7 @@
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
+| >= 2.x.x       | >= 1.3.x          | >= 2.0.0        |
 | >= 1.x.x       | >= 0.13.x         | >= 2.0.0        |
 
 <!-- BEGIN_TF_DOCS -->
@@ -35,10 +36,16 @@ The `inbound_rules` and `outbound_rules` supports the following:
 |priority|The value can be between `100` and `65500`. The priority number must be unique for each rule in the collection.|`number`|n/a|yes|
 |access|Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.|`string`|n/a|yes|
 |protocol|Network protocol this rule applies to. Possible values include `Tcp`, `Udp`, `Icmp`, or `*` (which matches all).|`string`|n/a|yes|
-|source\_address\_prefix|CIDR or source IP range or * to match any IP.|`string`|`*`|no|
-|source\_port\_range|Source Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`string`|`*`|no|
-|destination\_address\_prefix|CIDR or destination IP range or * to match any IP.|`string`|`*`|no|
-|destination\_port\_range|Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any.|`string`|`*`|no|
+|source\_address\_prefix|CIDR or source IP range or `*` to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. This is required if `source_address_prefixes` is not specified.|`string`|`null`|no|
+|source\_address\_prefixes|List of source address prefixes. Tags may not be used. This is required if `source_address_prefix` is not specified.|`list(string)`|`null`|no|
+|source\_application\_security\_group\_ids|A List of source Application Security Group IDs.|`list(string)`|`null`|no|
+|source\_port\_range|Source Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `source_port_ranges` is not specified.|`string`|`null`|no|
+|source\_port\_ranges|List of source ports or port ranges. This is required if `source_port_range` is not specified.|`list(string)`|`null`|no|
+|destination\_address\_prefix|CIDR or destination IP range or `*` to match any IP. Tags such as `VirtualNetwork`, `AzureLoadBalancer` and `Internet` can also be used. This is required if `destination_address_prefixes` is not specified.|`string`|`null`|no|
+|destination\_address\_prefixes|List of destination address prefixes. Tags may not be used. This is required if `destination_address_prefix` is not specified.|`list(string)`|`null`|no|
+|destination\_application\_security\_group\_ids|A List of destination Application Security Group IDs.|`list(string)`|`null`|no|
+|destination\_port\_range|Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `destination_port_ranges` is not specified.|`string`|`null`|no|
+|destination\_port\_ranges|List of destination ports or port ranges. This is required if `destination_port_range` is not specified.|`list(string)`|`null`|no|
 |description|A description for this rule. Restricted to 140 characters.|`string`|`null`|no|
 
 ## Outputs
