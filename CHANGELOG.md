@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD041 MD013 -->
-## 2.0.0 (Unreleased)
+## 2.0.0 (January 15, 2024)
 
 BREAKING CHANGES:
 
