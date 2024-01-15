@@ -18,6 +18,11 @@ output "location" {
   description = "The location/region where the network security group is created."
 }
 
+output "tags" {
+  value       = azurerm_network_security_group.nsg.tags
+  description = "The tags assigned to the resource."
+}
+
 output "inbound_rules" {
   value       = { for rule in azurerm_network_security_rule.inbounds : rule.name => rule }
   description = "Blocks containing configuration of each inbound security rule."
@@ -28,9 +33,4 @@ output "outbound_rules" {
   value       = { for rule in azurerm_network_security_rule.outbounds : rule.name => rule }
   description = "Blocks containing configuration of each outbound security rule."
   # module.MODULE_NAME.outbound_rules["OUTBOUND_RULE_NAME"].id
-}
-
-output "tags" {
-  value       = azurerm_network_security_group.nsg.tags
-  description = "The tags assigned to the resource."
 }

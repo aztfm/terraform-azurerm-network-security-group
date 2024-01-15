@@ -58,7 +58,7 @@ The following outputs are exported:
 |name|The name of the network security group.|no|
 |resource_group_name|The name of the resource group in which to create the network security group.|no|
 |location|The location/region where the network security group is created.|no|
+|tags|The tags assigned to the resource.|no|
 |inbound_rules|Blocks containing configuration of each inbound security rule.|no|
 |outbound_rules|Blocks containing configuration of each outbound security rule.|no|
-|tags|The tags assigned to the resource.|no|
 <!-- END_TF_DOCS -->
